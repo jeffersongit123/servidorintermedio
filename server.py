@@ -21,6 +21,10 @@ else:
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return 'Hello, World!'
+
 @app.route('/update', methods=['POST'])
 def update_weight():
     data = request.get_json()
@@ -41,5 +45,3 @@ def update_weight():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-
-
